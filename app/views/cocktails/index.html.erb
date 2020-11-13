@@ -1,7 +1,7 @@
 <div class="container">
   <div class="cocktails">
     <% @cocktails.each do |cocktail| %>
-    <div class="cocktail-card mt-5" style="background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),url('<%= cocktail.image_url %>');">
+    <div class="cocktail-card mt-5" style="background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),url('#');">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
     <% end %>
