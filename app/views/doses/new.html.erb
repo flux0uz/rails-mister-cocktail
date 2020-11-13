@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title">Add a dose to <%= @cocktail.name %></h5>
           <%= render "form", cocktail: @cocktail, dose: @dose %>
-          <%= link_to 'Back to cocktails', cocktails_path, class: 'btn btn-dark mt-3' %>
+          <%= link_to 'Back to cocktail', cocktail_path(@cocktail), class: 'btn btn-dark mt-3' %>
         </div>
       </div>
     </div>
