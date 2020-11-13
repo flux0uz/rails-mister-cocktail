@@ -14,4 +14,29 @@
 
 .cocktails-infos {
   color: $white;
+  .cocktail-description{
+    width: 60%;
+    a{
+      display: block;
+      width: 150px;
+    }
+  }
+}
+
+.cocktails-reviews{
+  color: $white;
+  width: 60%;
+  ul{
+    padding: 0;
+  }
+}
+
+.reviews-card{
+  width: 50%;
+  margin: 100px 0 20px;
+  color: $white;
+}
+
+hr {
+  background-color: $gold;
 }

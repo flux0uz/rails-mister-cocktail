@@ -3,6 +3,12 @@
   background: white;
 }
 
+.navbar-brand{
+  h4{
+    font-weight: 700 !important;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

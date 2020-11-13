@@ -1,6 +1,7 @@
 .cocktails{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
 }
 
 .cocktail-card{
@@ -17,6 +18,10 @@
     font-size: 1.8rem;
     font-weight: 700;
   }
+}
+
+.alt-img{
+  background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),asset-url('cocktail_card');
 }
 
 .card{

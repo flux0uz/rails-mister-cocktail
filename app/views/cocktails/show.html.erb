@@ -1,26 +1,54 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('#');">
-  <div class="container">
-    <h1><%= @cocktail.name %></h1>
-    <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
-  </div>
-</div>
+<% if @cocktail.photo.attached? %>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= cl_image_path @cocktail.photo.key, :quality=>"auto", :fetch_format=>:auto %>');">
+        <div class="container">
+          <h1><%= @cocktail.name %></h1>
+          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="banner alt-image">
+        <div class="container">
+          <h1><%= @cocktail.name %></h1>
+          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+        </div>
+      </div>
+<% end %>
 
 <div class="container">
-  <div class="cocktails-infos mt-5 d-flex justify-content-between align-items-start">
+  <div class="cocktails-infos my-5 d-flex justify-content-between align-items-start">
     <div class="cocktail-description">
-      <h3>Description</h3>
+      <h3 class="mb-3">Description</h3>
       <%= @cocktail.description %>
-      <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+      <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: 'btn btn-primary mt-3' %>
     </div>
     <div class="cocktails-ingredients">
-      <h3>Ingredients</h3>
+      <h3 class="mb-3">Ingredients</h3>
       <% @cocktail.doses.each do |dose| %>
         <div class="div">
-          <%= dose.ingredient.name %>
-          <%= dose.description %>
-          <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= dose.ingredient.name.capitalize %> -
+          <span class="text-muted"><%= dose.description %></span>
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <%= icon('far', 'trash-alt', class: 'px-2') %>
+          <% end %>
         </div>
       <% end %>
     </div>
+  </div>
+  <hr>
+  <div class="cocktails-reviews mb-5">
+    <h3 class="my-5">Reviews</h3>
+    <ul>
+      <% @cocktail.reviews.each do |review| %>
+        <li class="d-flex justify-content-between align-items-start">
+          <p><%= review.content %></p>
+          <p class="text-primary"><%= review.rating %> Star(s)</p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <hr>
+  <div class="reviews-card">
+    <h3>Add a review</h3>
+    <%= render "reviews/form", cocktail: @cocktail, review: @review %>
   </div>
 </div>

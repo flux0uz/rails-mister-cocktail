@@ -1,9 +1,15 @@
 <div class="container">
   <div class="cocktails">
     <% @cocktails.each do |cocktail| %>
-    <div class="cocktail-card mt-5" style="background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),url('#');">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
+    <% if cocktail.photo.attached? %>
+        <div class="cocktail-card mt-5" style="background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),url('<%= cl_image_path cocktail.photo.key, :quality=>"auto", :fetch_format=>:auto %>');">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% else %>
+        <div class="cocktail-card alt-img mt-5">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
