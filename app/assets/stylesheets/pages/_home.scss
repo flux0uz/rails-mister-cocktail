@@ -1,1 +1,18 @@
-// Specific CSS for your home-page
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),asset-url('home_page.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  h1{
+    color: $white;
+    font-size: 4rem;
+  }
+  a{
+    color: $white;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= @cocktail.image_url %>');">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cocktails-infos mt-5 d-flex justify-content-between align-items-start">
+    <div class="cocktail-description">
+      <h3>Description</h3>
+      <%= @cocktail.description %>
+      <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+    </div>
+    <div class="cocktails-ingredients">
+      <h3>Ingredients</h3>
+      <% @cocktail.doses.each do |dose| %>
+        <div class="div">
+          <%= dose.ingredient.name %>
+          <%= dose.description %>
+          <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

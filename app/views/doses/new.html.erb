@@ -1,0 +1,5 @@
+<div class="container">
+  <h2>Add a dose to <%= @cocktail.name %></h2>
+  <%= render "form", cocktail: @cocktail, dose: @dose %>
+  <%= link_to 'Back to home', cocktails_path, class: 'btn btn-dark mt-3' %>
+</div>

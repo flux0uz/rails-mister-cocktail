@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating ingredients"
+Ingredient.create(name: "grapefruit")
+Ingredient.create(name: "orange")
+Ingredient.create(name: "orange peel")
+Ingredient.create(name: "lime")
+Ingredient.create(name: "strawberry")
+Ingredient.create(name: "ice")
+Ingredient.create(name: "red bell pepper")
+Ingredient.create(name: "grapefruit juice")
+Ingredient.create(name: "apple juice juice")
+Ingredient.create(name: "sparkling water")
+Ingredient.create(name: "rum bacardi blanca")
+Ingredient.create(name: "gin bombay saphire")
+Ingredient.create(name: "vodka grey goose")
+Ingredient.create(name: "tequila")
+Ingredient.create(name: "aperol spritz")
+Ingredient.create(name: "vermouth")
+Ingredient.create(name: "campari")
+Ingredient.create(name: "champagne")
+Ingredient.create(name: "prosseco")
+Ingredient.create(name: "sugar cane")
+Ingredient.create(name: "sugar cane syrup")
+Ingredient.create(name: "agave syrup")
+Ingredient.create(name: "orange bitters")
+
+puts "Finished"

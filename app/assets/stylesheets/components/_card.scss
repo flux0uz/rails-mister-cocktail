@@ -1,0 +1,29 @@
+.cocktails{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cocktail-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 400px;
+  border: 1px solid gray;
+  background-size: cover;
+  background-position: center;
+  a{
+    color: $white;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}
+
+.card{
+  height: 450px;
+  .card-img{
+    width: 220px;
+    height: 448px;
+    object-fit: cover;
+  }
+}
