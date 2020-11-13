@@ -7,7 +7,12 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">Edit cocktail</h5>
-          <%= render "form", cocktail: @cocktail %>
+          <%= simple_form_for(@cocktail) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: "btn btn-primary" %>
+          <% end %>
           <%= link_to 'Back to cocktails', cocktails_path, class: 'btn btn-dark mt-3' %>
         </div>
       </div>
