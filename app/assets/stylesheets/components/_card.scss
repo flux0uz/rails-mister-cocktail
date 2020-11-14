@@ -2,23 +2,36 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 30px auto 60px;
+  a{
+    text-decoration: none !important;
+  }
 }
 
 .cocktail-card{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   width: 250px;
   height: 400px;
   border: 1px solid gray;
+  color: $white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.cocktail-card-bg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  a{
-    color: $white;
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
+  transition: all .5s;
+}
+
+.cocktail-card-bg:hover,
+.cocktail-card-bg:focus{
+  transform: scale(1.2);
 }
 
 .alt-img{

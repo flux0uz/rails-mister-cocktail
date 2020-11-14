@@ -33,7 +33,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <%= simple_form_for(@cocktail) do |f| %>
+      <%= simple_form_for(@cocktail, remote: true) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :photo, as: :file %>
