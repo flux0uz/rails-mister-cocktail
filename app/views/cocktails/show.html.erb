@@ -2,14 +2,14 @@
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= cl_image_path @cocktail.photo.key, :quality=>"auto", :fetch_format=>:auto %>');">
         <div class="container">
           <h1><%= @cocktail.name %></h1>
-          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-3 index' %>
         </div>
       </div>
     <% else %>
       <div class="banner alt-image">
         <div class="container">
           <h1><%= @cocktail.name %></h1>
-          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+          <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-3 index' %>
         </div>
       </div>
 <% end %>
