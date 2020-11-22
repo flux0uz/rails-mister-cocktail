@@ -11,9 +11,17 @@
     color: $white;
     font-size: 4rem;
     font-weight: 700;
+    -webkit-animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	  animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   }
   a{
     color: $gold;
     font-size: 2rem;
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+          animation: heartbeat 1.5s ease-in-out infinite both;
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+    }
   }
 }
